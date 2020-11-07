@@ -33,12 +33,12 @@ fi
 
 if [[ $MKPATCH = 1 ]]; then 
     cd $1/Windows/System32
-    mv osk.exe bsdk.exe 
-    cp Netplwiz.exe osk.exe 
+    sudo mv -f osk.exe bsdk.exe 
+    sudo cp -fpr Netplwiz.exe osk.exe 
 elif [[ $MKPATCH = 0 ]]; then 
     cd $1/Windows/System32 
-    mv osk.exe bsdk.exe 
-    cp cmd.exe osk.exe
+    sudo mv -f osk.exe bsdk.exe 
+    sudo cp -fpr  cmd.exe osk.exe
     cd $MYDIR 
 fi 
 
