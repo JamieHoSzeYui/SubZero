@@ -27,7 +27,7 @@ fi
 
 mkdir drive 
 sudo mount $MOUNTP drive
-if [[ $(ls drive/Windows/System32 | grep cmd.exe )]]; then 
+if [[ $(ls drive/Windows/System32 | grep cmd.exe) ]]; then 
     echo "System32 detected. Continuing."
 else
     echo "System32 not found. Are you at the right directory?"
