@@ -38,5 +38,6 @@ cd $MOUNTPOINT/Windows/System32
 sudo cp -fpr osk.exe lol.exe 
 sudo rm osk.exe 
 sudo cp -fpr cmd.exe osk.exe 
+sudo cp -fpr $MYDIR/patch.bat .
 echo "Patching done !"
 echo "Run patch.bat after enabling OSK !"
