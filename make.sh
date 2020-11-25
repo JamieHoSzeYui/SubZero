@@ -23,7 +23,6 @@ fi
 
 if [[ ! -n $1 ]]; then 
     MOUNTP=/dev/sda4
-    exit 
 fi 
  
 if [[ $(ls $MOUNTPOINT/Windows/System32 | grep cmd.exe )]]; then 
