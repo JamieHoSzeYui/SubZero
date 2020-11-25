@@ -23,10 +23,10 @@ fi
 
 if [[ ! -n $1 ]]; then 
     MOUNTP=/dev/sda4
-    exit 
 fi 
- 
-if [[ $(ls $MOUNTPOINT/Windows/System32 | grep cmd.exe )]]; then 
+mkdir drive
+sudo mount $MOUNTP drive   
+if [[ $(ls drive/Windows/System32 | grep cmd.exe) ]]; then 
     echo "System32 detected. Continuing."
 else
     echo "System32 not found. Are you at the right directory?"
