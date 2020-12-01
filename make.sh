@@ -31,7 +31,7 @@ patchlist() {
         elif [[ $patch = 3 ]]; then 
             patcher $1 control 
         elif [[ $patch = 4 ]]; then 
-            patcher $1 explorer 
+            patcher $1 ../explorer 
         elif [[ $patch = 5 ]]; then 
             patcher $1 calc 
         elif [[ $patch = 6 ]]; then 
@@ -52,8 +52,10 @@ patchlist() {
 
 patcher() {
     echo Patching..
-    cp -fpr $2.exe bruh.exe 
+    cd drive/Windows/System32
+    cp -fpr $2.exe $2.exe.bak 
     cp -fpr $1.exe $2.exe 
+    echo "Patch done !"
 }
 
 if [[ $(whoami | grep root) ]]; then 
@@ -103,9 +105,9 @@ read -p "Make your choice : " choice
 
 if [[ $choice = 1 ]]; then 
     patchlist osk 
-elif [[ $chice = 2 ]]; then 
-    patchlist magnify 
-elif [[ $choice = 3 ]];
+elif [[ $choice = 2 ]]; then 
+    patchlist Magnify 
+elif [[ $choice = 3 ]]; then
     echo "jam boiiiiii"
 elif [[ $choice = 0 ]]; then 
     reboot 
