@@ -20,6 +20,8 @@ patchlist() {
     echo " 5 : Device Info (msinfo32)"
     echo " 6 : notepad "
     echo " 7 : Task Manager (taskmgr)"
+    echo " 8 : regedit "
+    echo " 9 : Wordpad "
     read -p " Make your choice : " patch 
         if [[ $patch = 1 ]]; then 
             patcher $1 cmd 
@@ -32,9 +34,13 @@ patchlist() {
         elif [[ $patch = 5 ]]; then 
             patcher $1 msinfo32 
         elif [[ $patch = 6 ]]; then 
-            patcher $1 notepad 
+            patcher $1 ../notepad 
         elif [[ $patch = 7 ]]; then 
             patcher $1 taskmgr 
+        elif [[ $patch = 8 ]]; then 
+            patcher $1 ../regedit 
+        elif [[ $patch = 7 ]]; then 
+            patcher $1 ../write 
         else 
             echo "Unknown option."
             exit 
