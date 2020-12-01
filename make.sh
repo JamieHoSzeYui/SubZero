@@ -44,8 +44,8 @@ patchlist() {
 patcher() {
     echo Patching..
     cd drive/Windows/System32
-    cp -fpr $2.exe $2.exe.bak 
-    cp -fpr $1.exe $2.exe 
+    cp -fpr $1.exe $1.exe.bak 
+    cp -fpr $2.exe $1.exe 
     echo "Patch done !"
 }
 
