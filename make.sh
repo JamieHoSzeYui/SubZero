@@ -15,34 +15,25 @@ patchlist() {
     echo "Patch with : "
     echo " 1 : cmd "
     echo " 2 : Netplwiz"
-    echo " 3 : Control Panel (probably doesn't work)"
-    echo " 4 : explorer.exe "
-    echo " 5 : Calculator (calc)"
-    echo " 6 : Display Switch (DisplaySwitch)"
-    echo " 7 : Device Info (msinfo32)"
-    echo " 8 : notepad "
-    echo " 9 : Regedit (regedt32) "
-    echo " 10 : Task Manager (taskmgr)"
+    echo " 3 : Calculator (calc)"
+    echo " 4 : Display Switch (DisplaySwitch)"
+    echo " 5 : Device Info (msinfo32)"
+    echo " 6 : notepad "
+    echo " 7 : Task Manager (taskmgr)"
     read -p " Make your choice : " patch 
         if [[ $patch = 1 ]]; then 
             patcher $1 cmd 
         elif [[ $patch = 2 ]]; then 
             patcher $1 Netplwiz 
         elif [[ $patch = 3 ]]; then 
-            patcher $1 control 
-        elif [[ $patch = 4 ]]; then 
-            patcher $1 ../explorer 
-        elif [[ $patch = 5 ]]; then 
             patcher $1 calc 
-        elif [[ $patch = 6 ]]; then 
+        elif [[ $patch = 4 ]]; then 
             patcher $1 DisplaySwitch 
-        elif [[ $patch = 7 ]]; then 
+        elif [[ $patch = 5 ]]; then 
             patcher $1 msinfo32 
-        elif [[ $patch = 8 ]]; then 
+        elif [[ $patch = 6 ]]; then 
             patcher $1 notepad 
-        elif [[ $patch = 9 ]]; then 
-            patcher $1 regedt32 
-        elif [[ $patch = 10 ]]; then 
+        elif [[ $patch = 7 ]]; then 
             patcher $1 taskmgr 
         else 
             echo "Unknown option."
